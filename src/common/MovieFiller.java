@@ -133,7 +133,7 @@ public class MovieFiller {
         while (true) {
             text = scanner.nextLine();
             try {
-                movie.setMpaaRating(MpaaRating.valueOf(text));
+                movie.setMpaaRating(MpaaRating.valueOf(text.toUpperCase()));
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println("Неверное значение. Попробуйте ещё раз.");
@@ -169,8 +169,8 @@ public class MovieFiller {
                     throw new IllegalArgumentException("Ошибка: формат должен быть dd.MM.yyyy.");
                 }
                 ZonedDateTime date = ZonedDateTime.of(Integer.parseInt(content[2]), Integer.parseInt(content[1]), Integer.parseInt(content[0]), 0, 0, 0, 0, ZoneId.of("Europe/Moscow"));
-                if (date.isAfter(ZonedDateTime.now())) {
-                    throw new DateTimeException("Ошибка: дата не может быть в будущем.");
+                if (date.isAfter(ZonedDateTime.now()) || date.getYear() < 1500) {
+                    throw new DateTimeException("Ошибка: дата не может быть в будущем или раньше 1500 года.");
                 }
                 person.setBirthday(date);
                 movie.setOperator(person);
@@ -180,7 +180,7 @@ public class MovieFiller {
             } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
                 System.out.println("Ошибка: некорректный формат даты. Используйте dd.MM.yyyy. Попробуйте ещё раз.");
             } catch (DateTimeException e) {
-                System.out.println("Ошибка: дата рождения не может быть позже текущей даты. Попробуйте ещё раз.");
+                System.out.println("Ошибка: дата не может быть в будущем или раньше 1500 года. Попробуйте ещё раз.");
             }
         }
         System.out.println("Введите номер паспорта режиссёра");

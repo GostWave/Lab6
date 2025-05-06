@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 import static java.lang.String.valueOf;
 
@@ -135,11 +136,10 @@ public class CollectionManager {
      * @param id    id фильма
      * @param movie новый объект фильма
      */
-    public void updateElement(Long id, Movie movie) {
+    public void updateElement(Long id, Movie movie, Movie update) {
         collection.remove(movie);
-        Movie update = new Movie();
         update.setId(id);
-        collection.add(movieFiller.fill(update));
+        collection.add(update);
     }
 
     /**
@@ -181,17 +181,26 @@ public class CollectionManager {
     /**
      * Выводит количество oscarsCount всех фильмов в порядке возрастания.
      */
-    public void printOscarsCount() {
-        int[] oscarsCount = new int[collection.size()];
-        int i = 0;
-        for (Movie movie : collection) {
-            oscarsCount[i] = movie.getOscarsCount();
-            i++;
-        }
-        Arrays.sort(oscarsCount);
-        for (int item : oscarsCount) {
-            System.out.println(item);
-        }
+//    public String printOscarsCount() {
+//        int[] oscarsCount = new int[collection.size()];
+//        int i = 0;
+//        for (Movie movie : collection) {
+//            oscarsCount[i] = movie.getOscarsCount();
+//            i++;
+//        }
+//        Arrays.sort(oscarsCount);
+//        StringBuilder out = new StringBuilder();
+//        for (int item : oscarsCount) {
+//            out.append(item);
+//        }
+//        return out.toString();
+//    }
+    public String printOscarsCount() {
+        return collection.stream()
+                .map(Movie::getOscarsCount)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.joining("\n")); // перенос строки между значениями
     }
 
     /**

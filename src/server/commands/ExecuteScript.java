@@ -47,7 +47,7 @@ public class ExecuteScript extends Command {
                 } else if (text.contains("update")) {
                     if (element(scanner)){
                         try {
-                            collectionManager.updateElement(Long.parseLong(text.split(" ")[1]),movie);
+                            collectionManager.updateElement(Long.parseLong(text.split(" ")[1]),movie, null);
                         } catch (NumberFormatException e) {
                             return new Response("Ошибка при выполнении скрипта");
                         }

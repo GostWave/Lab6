@@ -20,8 +20,9 @@ public class Help extends Command {
     public Response execute(String strArg, Serializable objArg) {
         CommandManager commandManager = Server.getServer().getCommandManager();
         Map<String, Command> commands = commandManager.getCommands();
-        System.out.println("Список доступных команд:");
+
         StringBuilder out = new StringBuilder();
+        out.append("Список доступных команд:\n");
 
         for (Map.Entry<String, Command> entry : commands.entrySet()) {
             out.append(entry.getKey() + " : " + entry.getValue().getDescription()).append("\n");

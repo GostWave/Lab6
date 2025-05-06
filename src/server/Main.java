@@ -36,13 +36,13 @@ public class Main {
         commandManager.registerCommand("show", new Show());
         commandManager.registerCommand("clear", new Clear());
         commandManager.registerCommand("shuffle", new Shuffle());
-//        commandManager.registerCommand("update", new Update());
-//        commandManager.registerCommand("remove_by_id", new Remove());
+        commandManager.registerCommand("update_id", new Update());
+        commandManager.registerCommand("remove_by_id", new Remove());
 //        commandManager.registerCommand("insert_at", new Insert());
         commandManager.registerCommand("print_unique_mpaa_rating", new PrintMpaa());
 //        commandManager.registerCommand("print_field_ascending_oscars_count", new PrintOscarsCount());
         commandManager.registerCommand("execute_script", new ExecuteScript());
-//        commandManager.registerCommand("group_counting_by_oscarsCount", new GroupCounting());
+        commandManager.registerCommand("group_counting_by_oscarsCount", new GroupCounting());
         commandManager.registerCommand("add_if_max", new AddIfMax());
 
 

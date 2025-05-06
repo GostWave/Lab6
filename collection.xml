@@ -1,36 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <movies>
-    <movie id="2">
-        <name>wer</name>
+    <movie id="5">
+        <name>q</name>
         <coordinates>
-            <x>23.0</x>
-            <y>2</y>
-        </coordinates>
-        <genre>MUSICAL</genre>
-        <mpaaRating>G</mpaaRating>
-        <oscarsCount>9</oscarsCount>
-        <operator>
-            <birthday>2006-05-25T00:00:00+04:00[Europe/Moscow]</birthday>
-            <name>lol</name>
-            <passportID>1212367</passportID>
-        </operator>
-        <creationDate>2025-05-05</creationDate>
-    </movie>
-    <movie id="3">
-        <name>qwe</name>
-        <coordinates>
-            <x>2.0</x>
+            <x>4.0</x>
             <y>2</y>
         </coordinates>
         <genre>ACTION</genre>
         <mpaaRating>R</mpaaRating>
-        <oscarsCount>32</oscarsCount>
+        <oscarsCount>52</oscarsCount>
         <operator>
-            <birthday>0001-01-01T00:00:00+02:30:17[Europe/Moscow]</birthday>
-            <name>werwerw</name>
-            <passportID>2342432324</passportID>
+            <birthday>0002-02-02T00:00:00+02:30:17[Europe/Moscow]</birthday>
+            <name>qwe</name>
+            <passportID>123123</passportID>
         </operator>
-        <creationDate>2025-05-05</creationDate>
+        <creationDate>2025-05-06</creationDate>
     </movie>
     <movie id="1">
         <name>qwe</name>
@@ -63,5 +47,21 @@
             <passportID>234324324</passportID>
         </operator>
         <creationDate>2025-05-05</creationDate>
+    </movie>
+    <movie id="6">
+        <name>w</name>
+        <coordinates>
+            <x>3.0</x>
+            <y>2</y>
+        </coordinates>
+        <genre>ACTION</genre>
+        <mpaaRating>R</mpaaRating>
+        <oscarsCount>4</oscarsCount>
+        <operator>
+            <birthday>2006-05-25T00:00:00+04:00[Europe/Moscow]</birthday>
+            <name>r</name>
+            <passportID>12341234</passportID>
+        </operator>
+        <creationDate>2025-05-06</creationDate>
     </movie>
 </movies>

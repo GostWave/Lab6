@@ -134,7 +134,7 @@ import java.util.Iterator;
 
 public class Server {
     private static final int PORT = 5001;
-    private static final int BUFFER_SIZE = 1024;
+    private static final int BUFFER_SIZE = 8192;
 
     private CollectionManager collectionManager;
     private ConsoleCaller consoleCaller;
