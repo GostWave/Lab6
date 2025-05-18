@@ -171,7 +171,7 @@ public class Server {
             ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
 
             while (true) {
-                selector.select(); // блокируется, пока не появится событие
+                selector.select();
                 Iterator<SelectionKey> keyIterator = selector.selectedKeys().iterator();
 
                 while (keyIterator.hasNext()) {
@@ -218,7 +218,7 @@ public class Server {
             byte[] data = new byte[buffer.limit()];
             buffer.get(data);
 
-            // Десериализация запроса
+
             ByteArrayInputStream bais = new ByteArrayInputStream(data);
             ObjectInputStream ois = new ObjectInputStream(bais);
             Request request = (Request) ois.readObject();
@@ -226,11 +226,15 @@ public class Server {
             System.out.println("Получена команда: " + request.getCommandName());
 
             Command command = commandManager.getCommandByKey(request.getCommandName());
-            Response response = (command != null)
-                    ? command.execute(request.getCommandStrArg(), request.getCommandObjArg())
-                    : new Response("Неизвестная команда: " + request.getCommandName());
+            Response response;
+            if (command != null) {
+                response = command.execute(request.getCommandStrArg(), request.getCommandObjArg());
+            } else {
+                response = new Response("Неизвестная команда: " + request.getCommandName());
+            }
 
-            // Сериализация ответа
+
+
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(response);

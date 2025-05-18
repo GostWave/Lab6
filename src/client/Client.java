@@ -196,10 +196,10 @@ public class Client {
 
                 Request request = createRequest(commandName,argument);
 
-                // Отправка запроса
+
                 sendRequest(socketChannel, request);
 
-                // Получение ответа
+
                 Response response = receiveResponse(socketChannel);
                 if (response != null) {
                     System.out.println(response.getMessage());
