@@ -252,7 +252,7 @@ public class Client {
     }
 
     public Request createRequest(String command, String argument){
-        if (command.equalsIgnoreCase("add") || command.equalsIgnoreCase("update_id") || command.equalsIgnoreCase("add_if_max")){
+        if (command.equalsIgnoreCase("add") || command.startsWith("update_id") || command.equalsIgnoreCase("add_if_max")){
             MovieFiller movieFiller = new MovieFiller();
             Movie objArgument = movieFiller.fill(new Movie());
             if (objArgument != null) {
@@ -261,8 +261,8 @@ public class Client {
                 System.out.println("Ошибка при создании объекта Movie.");
                 return null;
             }
-        }
-        else {
+
+        } else {
             return new Request(command, argument);
         }
     }
