@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <movies>
-    <movie id="6">
-        <name>w</name>
-        <coordinates>
-            <x>3.0</x>
-            <y>2</y>
-        </coordinates>
-        <genre>ACTION</genre>
-        <mpaaRating>R</mpaaRating>
-        <oscarsCount>4</oscarsCount>
-        <operator>
-            <birthday>2006-05-25T00:00:00+04:00[Europe/Moscow]</birthday>
-            <name>r</name>
-            <passportID>12341234</passportID>
-        </operator>
-        <creationDate>2025-05-06</creationDate>
-    </movie>
     <movie id="1">
         <name>qwe</name>
         <coordinates>
@@ -47,5 +31,37 @@
             <passportID>123414</passportID>
         </operator>
         <creationDate>2025-05-18</creationDate>
+    </movie>
+    <movie id="6">
+        <name>w</name>
+        <coordinates>
+            <x>3.0</x>
+            <y>2</y>
+        </coordinates>
+        <genre>ACTION</genre>
+        <mpaaRating>R</mpaaRating>
+        <oscarsCount>4</oscarsCount>
+        <operator>
+            <birthday>2006-05-25T00:00:00+04:00[Europe/Moscow]</birthday>
+            <name>r</name>
+            <passportID>12341234</passportID>
+        </operator>
+        <creationDate>2025-05-06</creationDate>
+    </movie>
+    <movie id="9">
+        <name>qwe</name>
+        <coordinates>
+            <x>3.0</x>
+            <y>2</y>
+        </coordinates>
+        <genre>ACTION</genre>
+        <mpaaRating>R</mpaaRating>
+        <oscarsCount>52</oscarsCount>
+        <operator>
+            <birthday>2000-10-10T00:00:00+04:00[Europe/Moscow]</birthday>
+            <name>ew</name>
+            <passportID>12312312</passportID>
+        </operator>
+        <creationDate>2025-05-20</creationDate>
     </movie>
 </movies>

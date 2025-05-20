@@ -76,7 +76,13 @@ public class ExecuteScript extends Command {
                         argument = text.split(" ")[1];
                     }
                     Command command = commandManager.getCommandByKey(text);
-                    out.append(command.execute(argument, null));
+                    if (command!=null){
+                        out.append(command.execute(argument, null).getMessage()+"\n\n");
+                    } else {
+                        out.append("Неверное имя команды");
+                        break;
+                    }
+
                 }
 
 
